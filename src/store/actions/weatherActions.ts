@@ -9,13 +9,18 @@ import {
   SET_ERROR,
 } from "../types";
 
+const API_KEY = "b507e96b292080e77f64ceeb3b322f29";
+
 export const getWeather = (
   city: string
 ): ThunkAction<void, RootState, null, WeatherAction> => {
   return async (dispatch) => {
     try {
+      {
+        console.log(API_KEY);
+      }
       const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?id=${city}&appid=${process.env.REACT_APP_API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${API_KEY}`
       );
 
       if (!res.ok) {
