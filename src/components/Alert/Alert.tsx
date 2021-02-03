@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import { AlertAction } from "../../store/types";
 
+import CloseIcon from "@material-ui/icons/Close";
+
 import "./styled.scss";
 
 interface AlertProps {
@@ -17,9 +19,9 @@ const Alert: FC<AlertProps> = ({ message, onClose }) => {
           <p className="modal-message">{message}</p>
         </header>
         <footer>
-          <button className="close-btn" onClick={onClose}>
-            Close
-          </button>
+          <div className="close-btn">
+            <CloseIcon onClick={onClose} />
+          </div>
         </footer>
       </div>
     </div>

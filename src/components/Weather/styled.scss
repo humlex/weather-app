@@ -1,0 +1,27 @@
+.section {
+  margin-top: 2%;
+
+  .container {
+    margin: auto;
+
+    border-radius: 15px;
+    max-width: 40%;
+    min-width: 336px;
+    background-color: rgba(199, 183, 183, 0.3);
+
+    .title {
+      padding-top: 3%;
+    }
+
+    .results {
+      margin-top: 3%;
+      height: 15vh;
+      display: flex;
+      justify-content: space-around;
+
+      .results-title {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

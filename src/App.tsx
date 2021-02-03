@@ -10,6 +10,8 @@ import Weather from "./components/Weather";
 import { setAlert } from "./store/actions/alertActions";
 import { setError } from "./store/actions/weatherActions";
 
+import "./App.scss";
+
 const App: FC<{}> = () => {
   const dispatch = useDispatch();
   const weatherData = useSelector((state: RootState) => state.weather.data);
@@ -19,7 +21,6 @@ const App: FC<{}> = () => {
 
   return (
     <div>
-      {console.log(process.env.REACT_APP_API_KEY)}
       <Search title="Enter city name" />
       {loading ? (
         <h2>Loading...</h2>
@@ -29,7 +30,9 @@ const App: FC<{}> = () => {
       {alertMessage && (
         <Alert message={alertMessage} onClose={() => dispatch(setAlert(""))} />
       )}
-      {error && <Alert message={error} onClose={() => dispatch(setError())} />}
+      {error && (
+        <Alert message={error + " :("} onClose={() => dispatch(setError())} />
+      )}
     </div>
   );
 };

@@ -1,0 +1,22 @@
+.modal-card {
+  display: flex;
+  justify-content: center;
+
+  .modal-header {
+    display: flex;
+    align-items: center;
+
+    .modal-message {
+      display: block;
+      font-size: 20px;
+    }
+  }
+
+  .close-btn {
+    display: block;
+    cursor: pointer;
+    margin-left: 5px;
+    color: red;
+    font-size: 20px;
+  }
+}

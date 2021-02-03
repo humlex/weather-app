@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { setAlert } from "../../store/actions/alertActions";
 import { getWeather, setLoading } from "../../store/actions/weatherActions";
 
+import SearchIcon from "@material-ui/icons/Search";
+
 import "./styled.scss";
 
 interface SearchProps {
@@ -40,7 +42,9 @@ const Search: FC<SearchProps> = ({ title }) => {
           value={city}
           onChange={changeHandler}
         />
-        <button className="submit-btn">Search</button>
+        <div className="submit-btn">
+          <SearchIcon />
+        </div>
       </form>
     </div>
   );
